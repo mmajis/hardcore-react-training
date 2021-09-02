@@ -41,14 +41,14 @@ const getBundleAnalyzer = (mode: Mode) => {
   const options: BundleAnalyzerPlugin.Options =
     mode === "development"
       ? {
-          analyzerPort: 8890,
-          openAnalyzer: false
-        }
+        analyzerPort: 8890,
+        openAnalyzer: false
+      }
       : {
-          analyzerMode: "disabled",
-          generateStatsFile: true,
-          statsFilename: "stats.json"
-        };
+        analyzerMode: "disabled",
+        generateStatsFile: true,
+        statsFilename: "stats.json"
+      };
 
   const p = new BundleAnalyzerPlugin(options);
   return p;
@@ -113,7 +113,7 @@ const base: Configuration = {
     port: env.get("DEVSERVER_PORT").asPortNumber() || 8888,
     hot: true,
     historyApiFallback: true,
-    allowedHosts: "all"
+    allowedHosts: ["all"]
   },
   resolve: {
     // modules: [path.resolve("node_modules")],
