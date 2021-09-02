@@ -2,6 +2,7 @@
 
 import { FC } from "react";
 import { PersonType } from "../services/person";
+import { useStore } from "../services/state";
 import HirePersonForm from "./HirePersonForm";
 import PersonList from "./PersonList";
 import Spinner from "./Spinner";
@@ -24,6 +25,9 @@ const AppUI: FC<Props> = (props) => {
     numberOfRenders,
     increaseNumberOfRenders
   } = props;
+
+  const isLoading = useStore((store) => Boolean(store.asyncLoading));
+
   const goodPersons = persons.filter(isGood);
   const badPersons = persons.filter((p) => !isGood(p));
 
@@ -31,7 +35,7 @@ const AppUI: FC<Props> = (props) => {
     <main>
       <h1>Giga ERP!!!</h1>
 
-      <Spinner />
+      {isLoading && <Spinner />}
 
       <button onClick={increaseNumberOfRenders}>incremento!</button>
 
