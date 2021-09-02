@@ -1,8 +1,6 @@
 import axios from "axios";
 import envVar from "env-var";
 
-import * as yup from "yup";
-
 // yup, zod
 
 export type GenderType = 0 | 1 | 2;

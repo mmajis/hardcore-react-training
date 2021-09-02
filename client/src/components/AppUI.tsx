@@ -4,6 +4,7 @@ import { FC } from "react";
 import { PersonType } from "../services/person";
 import HirePersonForm from "./HirePersonForm";
 import PersonList from "./PersonList";
+import Spinner from "./Spinner";
 
 const isGood = (p: PersonType) => p.age < 30;
 
@@ -29,6 +30,8 @@ const AppUI: FC<Props> = (props) => {
   return (
     <main>
       <h1>Giga ERP!!!</h1>
+
+      <Spinner />
 
       <button onClick={increaseNumberOfRenders}>incremento!</button>
 

@@ -31,6 +31,7 @@ export const useStore = create<State>((set) => {
       });
     },
     hirePerson: (person) => {
+      // make a "real" hire if time left.
       set((state) => ({
         persons: state.persons.concat(person)
       }));
